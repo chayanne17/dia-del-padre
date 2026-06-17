@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Feliz Día del Padre ❤️</title>
+
+
+<style>
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    background:#111;
+
+    color:white;
+
+    font-family:Arial,sans-serif;
+
+    overflow:hidden;
+
+}
+
+
+
+/* pantalla inicial */
+
+#inicio{
+
+    position:fixed;
+
+    inset:0;
+
+    background:black;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    gap:25px;
+
+    z-index:100;
+
+}
+
+
+
+#inicio button{
+
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#d4af37;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* foto inicial */
+
+
+#introFoto{
+
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:black;
+
+    z-index:90;
+
+}
+
+
+
+#introFoto img{
+
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+.animar{
+
+
+animation:alejar 5s forwards;
+
+
+}
+
+
+
+@keyframes alejar{
+
+
+from{
+
+transform:scale(1);
+
+}
+
+
+to{
+
+transform:scale(.15);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+/* contenido final */
+
+
+#contenido{
+
+
+display:none;
+
+
+height:100vh;
+
+
+width:100vw;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+flex-direction:column;
+
+
+}
+
+
+
+
+h1{
+
+
+text-align:center;
+
+margin:15px;
+
+
+}
+
+
+
+/* CORBATA */
+
+
+.tie-wrapper{
+
+
+width:100vw;
+
+height:75vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+
+
+.collage{
+
+
+position:relative;
+
+
+width:420px;
+
+height:850px;
+
+
+}
+
+
+
+/* fotos abajo */
+
+
+.fotos{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,85px);
+
+    grid-template-rows:repeat(7,100px);
+
+    gap:6px;
+
+    justify-content:center;
+
+    align-content:center;
+
+    padding:60px;
+
+}
+
+.fotos img{
+
+    width:85px;
+
+    height:100px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.fotos img:nth-child(19){
+
+    grid-column:1;
+
+    grid-row:7;
+
+    transform:translateX(-35px);
+
+}
+
+
+.fotos img:nth-child(20){
+
+    grid-column:3;
+
+    grid-row:7;
+
+    transform:translateX(-35px);
+
+}
+
+/* corbata encima */
+
+
+.corbata{
+
+
+position:absolute;
+
+
+inset:0;
+
+
+width:100%;
+
+
+height:100%;
+
+
+object-fit:contain;
+
+
+z-index:2;
+
+
+
+pointer-events:none;
+
+
+}
+
+
+
+
+/* visor */
+
+
+#visor{
+
+
+position:fixed;
+
+
+inset:0;
+
+
+background:rgba(0,0,0,.95);
+
+
+display:none;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+z-index:200;
+
+
+}
+
+
+
+
+#visor img{
+
+
+max-width:90%;
+
+
+max-height:90%;
+
+
+border-radius:15px;
+
+
+box-shadow:0 0 30px white;
+
+
+}
+
+.fotos img:nth-child(19){
+
+    grid-column:2;
+
+    grid-row:7;
+
+    transform:translateX(-35px);
+
+}
+
+
+.fotos img:nth-child(20){
+
+    grid-column:2;
+
+    grid-row:7;
+
+    transform:translateX(35px);
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div id="inicio">
+
+
+<h1>
+Tengo una sorpresa para ti ❤️
+</h1>
+
+
+<button onclick="comenzar()">
+
+▶ Comenzar
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div id="introFoto">
+
+
+<img src="fotos/foto1.jpeg" id="fotoPrincipal">
+
+
+</div>
+
+
+
+
+
+<div id="contenido">
+
+
+<h1>
+
+Feliz Día del Padre ❤️
+
+</h1>
+
+
+<div class="tie-wrapper">
+
+
+<div class="collage">
+
+
+<div class="fotos" id="fotos">
+
+</div>
+
+<img class="corbata" src="assets/corbata.png">
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div id="visor" onclick="cerrarVisor()">
+
+
+<img id="imagenGrande">
+
+
+</div>
+
+
+
+
+
+<audio id="musica" src="audio/cancion.mp3"></audio>
+
+
+
+
+<script>
+
+
+
+
+
+// CREAR FOTOS
+
+
+const contenedor = 
+document.getElementById("fotos");
+
+
+
+for(let i=1;i<=20;i++){
+
+
+
+let img=document.createElement("img");
+
+
+
+img.src =
+`fotos/foto${i}.jpeg`;
+
+
+
+img.onclick=function(){
+
+
+
+document.getElementById("imagenGrande").src=this.src;
+
+
+
+document.getElementById("visor")
+.style.display="flex";
+
+
+
+};
+
+
+
+if(i <= 18){
+
+    contenedor.appendChild(img);
+
+}
+
+else{
+
+    img.style.transform="translateY(20px)";
+
+    contenedor.appendChild(img);
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+// CERRAR FOTO
+
+
+function cerrarVisor(){
+
+
+document.getElementById("visor")
+.style.display="none";
+
+
+}
+
+
+
+
+
+
+
+
+// INICIAR
+
+
+function comenzar(){
+
+
+
+document.getElementById("musica")
+.play();
+
+
+
+document.getElementById("inicio")
+.style.display="none";
+
+
+
+let intro =
+document.getElementById("introFoto");
+
+
+
+intro.style.display="flex";
+
+
+
+setTimeout(()=>{
+
+
+document
+.getElementById("fotoPrincipal")
+.classList.add("animar");
+
+
+
+},300);
+
+
+
+
+
+
+setTimeout(()=>{
+
+
+
+intro.style.display="none";
+
+
+
+document.getElementById("contenido")
+.style.display="flex";
+
+
+
+},5300);
+
+
+
+}
+
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
