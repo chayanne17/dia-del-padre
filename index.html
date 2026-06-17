@@ -4,56 +4,58 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Feliz Día del Padre ❤️</title>
+<title>Día del Padre</title>
 
 
 <style>
 
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 
 body{
 
-    background:#111;
+background:#111;
 
-    color:white;
+color:white;
 
-    font-family:Arial,sans-serif;
+font-family:Arial,sans-serif;
 
-    overflow:hidden;
+overflow-y:auto;
 
 }
 
 
 
-/* pantalla inicial */
+/* INICIO */
+
 
 #inicio{
 
-    position:fixed;
+position:fixed;
 
-    inset:0;
+inset:0;
 
-    background:black;
+background:black;
 
-    display:flex;
+display:flex;
 
-    justify-content:center;
+flex-direction:column;
 
-    align-items:center;
+justify-content:center;
 
-    flex-direction:column;
+align-items:center;
 
-    gap:25px;
+gap:25px;
 
-    z-index:100;
+z-index:100;
 
 }
 
@@ -61,42 +63,42 @@ body{
 
 #inicio button{
 
+padding:15px 35px;
 
-    padding:15px 35px;
+border:none;
 
-    border:none;
+border-radius:30px;
 
-    border-radius:30px;
+background:#d4af37;
 
-    background:#d4af37;
+font-size:18px;
 
-    font-size:18px;
-
-    font-weight:bold;
+font-weight:bold;
 
 }
 
 
 
-/* foto inicial */
+
+
+/* FOTO INICIAL */
 
 
 #introFoto{
 
+position:fixed;
 
-    position:fixed;
+inset:0;
 
-    inset:0;
+display:none;
 
-    display:none;
+justify-content:center;
 
-    justify-content:center;
+align-items:center;
 
-    align-items:center;
+background:black;
 
-    background:black;
-
-    z-index:90;
+z-index:90;
 
 }
 
@@ -104,12 +106,11 @@ body{
 
 #introFoto img{
 
+width:100%;
 
-    width:100%;
+height:100%;
 
-    height:100%;
-
-    object-fit:cover;
+object-fit:cover;
 
 }
 
@@ -117,9 +118,7 @@ body{
 
 .animar{
 
-
 animation:alejar 5s forwards;
-
 
 }
 
@@ -148,44 +147,37 @@ opacity:0;
 
 
 
-/* contenido final */
+
+
+
+/* CONTENIDO */
 
 
 #contenido{
 
-
 display:none;
 
-
-height:100vh;
-
-
-width:100vw;
-
+min-height:100vh;
 
 justify-content:center;
 
-
 align-items:center;
-
 
 flex-direction:column;
 
-
 }
-
 
 
 
 h1{
 
-
 text-align:center;
 
-margin:15px;
-
+margin:20px;
 
 }
+
+
 
 
 
@@ -194,10 +186,9 @@ margin:15px;
 
 .tie-wrapper{
 
-
 width:100vw;
 
-height:75vh;
+height:820px;
 
 display:flex;
 
@@ -211,51 +202,74 @@ align-items:center;
 
 .collage{
 
-
 position:relative;
-
 
 width:420px;
 
-height:850px;
-
+height:820px;
 
 }
 
 
 
-/* fotos abajo */
+
+
+
+
+/* FOTOS */
 
 
 .fotos{
 
-    position:absolute;
 
-    inset:0;
+position:absolute;
 
-    z-index:1;
 
-    display:grid;
+inset:0;
 
-    grid-template-columns:repeat(3,85px);
 
-    grid-template-rows:repeat(7,100px);
+z-index:1;
 
-    gap:6px;
 
-    justify-content:center;
 
-    align-content:center;
+display:grid;
 
-    padding:60px;
+
+
+grid-template-columns:repeat(3,80px);
+
+
+
+grid-template-rows:repeat(9,85px);
+
+
+
+gap:2px;
+
+
+
+justify-content:center;
+
+
+
+align-content:start;
+
+
+
+padding-top:55px;
+
+
 
 }
 
+
+
+
 .fotos img{
 
-    width:85px;
+    width:80px;
 
-    height:100px;
+    height:85px;
 
     object-fit:cover;
 
@@ -265,28 +279,239 @@ height:850px;
 
 }
 
-.fotos img:nth-child(19){
+/* DISTRIBUCION */
 
-    grid-column:1;
 
-    grid-row:7;
+.fotos img:nth-child(1){
 
-    transform:translateX(-35px);
+grid-column:1;
+
+grid-row:1;
 
 }
+
+
+
+.fotos img:nth-child(2){
+
+grid-column:2;
+
+grid-row:1;
+
+}
+
+
+
+.fotos img:nth-child(3){
+
+grid-column:3;
+
+grid-row:1;
+
+}
+
+
+
+
+
+.fotos img:nth-child(5){
+
+grid-column:2;
+
+grid-row:2;
+
+}
+
+
+
+
+
+.fotos img:nth-child(8){
+
+grid-column:2;
+
+grid-row:3;
+
+}
+
+
+
+
+
+.fotos img:nth-child(10){
+
+grid-column:1;
+
+grid-row:4;
+
+}
+
+
+
+.fotos img:nth-child(11){
+
+grid-column:2;
+
+grid-row:4;
+
+}
+
+
+
+.fotos img:nth-child(12){
+
+grid-column:3;
+
+grid-row:4;
+
+}
+
+
+
+
+
+
+
+.fotos img:nth-child(13){
+
+grid-column:1;
+
+grid-row:5;
+
+}
+
+
+
+.fotos img:nth-child(14){
+
+grid-column:2;
+
+grid-row:5;
+
+}
+
+
+
+.fotos img:nth-child(15){
+
+grid-column:3;
+
+grid-row:5;
+
+}
+
+
+
+
+
+.fotos img:nth-child(16){
+
+grid-column:1;
+
+grid-row:6;
+
+}
+
+
+
+.fotos img:nth-child(17){
+
+grid-column:2;
+
+grid-row:6;
+
+}
+
+
+
+.fotos img:nth-child(18){
+
+grid-column:3;
+
+grid-row:6;
+
+}
+
+
+
+
+
+/* PARTE BAJA */
+
+
+.fotos img:nth-child(19){
+
+grid-column:1;
+
+grid-row:7;
+
+}
+
 
 
 .fotos img:nth-child(20){
 
-    grid-column:3;
+grid-column:2;
 
-    grid-row:7;
-
-    transform:translateX(-35px);
+grid-row:7;
 
 }
 
-/* corbata encima */
+
+
+.fotos img:nth-child(7){
+
+grid-column:3;
+
+grid-row:7;
+
+}
+
+
+
+
+
+
+
+/* PUNTA PEGADA */
+
+
+.fotos img:nth-child(4){
+
+grid-column:1;
+
+grid-row:7;
+
+transform:translateY(75px);
+
+}
+
+
+
+.fotos img:nth-child(9){
+
+grid-column:2;
+
+grid-row:7;
+
+transform:translateY(75px);
+
+}
+
+
+
+.fotos img:nth-child(6){
+
+grid-column:3;
+
+grid-row:7;
+
+transform:translateY(75px);
+
+}
+
+
+/* CORBATA ENCIMA */
 
 
 .corbata{
@@ -310,7 +535,6 @@ object-fit:contain;
 z-index:2;
 
 
-
 pointer-events:none;
 
 
@@ -319,7 +543,11 @@ pointer-events:none;
 
 
 
-/* visor */
+
+
+
+
+/* VISOR */
 
 
 #visor{
@@ -331,16 +559,21 @@ position:fixed;
 inset:0;
 
 
+
 background:rgba(0,0,0,.95);
+
 
 
 display:none;
 
 
+
 justify-content:center;
 
 
+
 align-items:center;
+
 
 
 z-index:200;
@@ -363,35 +596,13 @@ max-height:90%;
 border-radius:15px;
 
 
-box-shadow:0 0 30px white;
-
-
-}
-
-.fotos img:nth-child(19){
-
-    grid-column:2;
-
-    grid-row:7;
-
-    transform:translateX(-35px);
-
 }
 
 
-.fotos img:nth-child(20){
 
-    grid-column:2;
-
-    grid-row:7;
-
-    transform:translateX(35px);
-
-}
 
 
 </style>
-
 
 </head>
 
@@ -404,9 +615,6 @@ box-shadow:0 0 30px white;
 <div id="inicio">
 
 
-<h1>
-Tengo una sorpresa para ti ❤️
-</h1>
 
 
 <button onclick="comenzar()">
@@ -417,6 +625,7 @@ Tengo una sorpresa para ti ❤️
 
 
 </div>
+
 
 
 
@@ -434,14 +643,17 @@ Tengo una sorpresa para ti ❤️
 
 
 
+
 <div id="contenido">
 
 
 <h1>
 
-Feliz Día del Padre ❤️
+Feliz Día del Padre
 
 </h1>
+
+
 
 
 <div class="tie-wrapper">
@@ -450,19 +662,23 @@ Feliz Día del Padre ❤️
 <div class="collage">
 
 
-<div class="fotos" id="fotos">
+<div class="fotos" id="fotos"></div>
 
-</div>
+
 
 <img class="corbata" src="assets/corbata.png">
 
-</div>
-
 
 </div>
 
 
 </div>
+
+
+</div>
+
+
+
 
 
 
@@ -480,7 +696,11 @@ Feliz Día del Padre ❤️
 
 
 
+
+
 <audio id="musica" src="audio/cancion.mp3"></audio>
+
+
 
 
 
@@ -488,61 +708,33 @@ Feliz Día del Padre ❤️
 <script>
 
 
-
-
-
-// CREAR FOTOS
-
-
-const contenedor = 
-document.getElementById("fotos");
+const contenedor=document.getElementById("fotos");
 
 
 
 for(let i=1;i<=20;i++){
 
 
-
 let img=document.createElement("img");
 
 
-
-img.src =
-`fotos/foto${i}.jpeg`;
+img.src=`fotos/foto${i}.jpeg`;
 
 
 
 img.onclick=function(){
 
 
-
 document.getElementById("imagenGrande").src=this.src;
 
 
-
-document.getElementById("visor")
-.style.display="flex";
-
+document.getElementById("visor").style.display="flex";
 
 
 };
 
 
-
-if(i <= 18){
-
-    contenedor.appendChild(img);
-
-}
-
-else{
-
-    img.style.transform="translateY(20px)";
-
-    contenedor.appendChild(img);
-
-}
-
+contenedor.appendChild(img);
 
 
 }
@@ -551,16 +743,12 @@ else{
 
 
 
-
-
-// CERRAR FOTO
 
 
 function cerrarVisor(){
 
 
-document.getElementById("visor")
-.style.display="none";
+document.getElementById("visor").style.display="none";
 
 
 }
@@ -569,28 +757,21 @@ document.getElementById("visor")
 
 
 
-
-
-
-// INICIAR
 
 
 function comenzar(){
 
 
 
-document.getElementById("musica")
-.play();
+document.getElementById("musica").play();
 
 
 
-document.getElementById("inicio")
-.style.display="none";
+document.getElementById("inicio").style.display="none";
 
 
 
-let intro =
-document.getElementById("introFoto");
+let intro=document.getElementById("introFoto");
 
 
 
@@ -598,14 +779,12 @@ intro.style.display="flex";
 
 
 
+
 setTimeout(()=>{
 
 
-document
-.getElementById("fotoPrincipal")
+document.getElementById("fotoPrincipal")
 .classList.add("animar");
-
-
 
 },300);
 
@@ -617,9 +796,7 @@ document
 setTimeout(()=>{
 
 
-
 intro.style.display="none";
-
 
 
 document.getElementById("contenido")
@@ -634,13 +811,11 @@ document.getElementById("contenido")
 }
 
 
-
-
 </script>
 
 
 
-
 </body>
+
 
 </html>
